@@ -152,13 +152,13 @@ if uploaded_file is not None:
 # --- RESULTS UI ---
 if 'markdown' in st.session_state:
     # Safely unpack 3 values (assuming you saved total_cost as the 3rd item)
-    in_tok, out_tok, cost = st.session_state['stats']
+    in_tok, out_tok = st.session_state['stats']
 
     st.subheader("📊 Conversion Stats")
     col1, col2, col3 = st.columns(3)
     col1.metric("Total Input Tokens", f"{in_tok:,}")
     col2.metric("Total Output Tokens", f"{out_tok:,}")
-    col3.metric("Estimated Cost", f"${cost:.5f}")
+    #col3.metric("Estimated Cost", f"${cost:.5f}")
 
     st.divider()
 
